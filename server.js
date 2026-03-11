@@ -9,7 +9,7 @@ app.get('/datos', async (req, res) => {
     const sleepData = await client.getSleepData();
     res.json(sleepData);
   } catch (error) {
-    res.status(500).json({ error: "Error de conexión" });
+    res.status(500).json({ error: "Error de conexión", detalle: error.message });
   }
 });
 
